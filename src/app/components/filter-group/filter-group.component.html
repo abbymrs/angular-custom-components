@@ -1,0 +1,12 @@
+<app-custom-input
+  *ngFor="let item of selectedData"
+  [item]="item"
+  [searchResults]="searchResults"
+  [searchInput]="searchInput"
+  (searchKeyWord)="onSearch($event)"
+  (showDefaultList)="onShowDefaultList($event)"
+></app-custom-input>
+<app-custom-dropdown
+  [dropdownData]="dropdownData"
+  (selectOptions)="onSelectOptions($event)"
+></app-custom-dropdown>

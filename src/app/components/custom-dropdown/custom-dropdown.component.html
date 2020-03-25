@@ -1,0 +1,22 @@
+<div class="dropdown-list-container" (clickOutside)="onClickOutside($event)">
+  <button
+    pButton
+    type="button"
+    icon="pi pi-plus"
+    iconPos="left"
+    label="MORE"
+    (click)="showDropdownData()"
+  ></button>
+
+  <ul *ngIf="isShowDropdown" class="dropdown-list">
+    <li *ngFor="let data of dropdownData">
+      <p-checkbox
+        name="dropdownList"
+        [value]="data"
+        [label]="data.label"
+        [(ngModel)]="selectedItems"
+        (onChange)="onSelectedValueChange($event)"
+      ></p-checkbox>
+    </li>
+  </ul>
+</div>

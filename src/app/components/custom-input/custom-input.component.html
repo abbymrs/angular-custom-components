@@ -1,0 +1,14 @@
+<app-custom-searchable-dropdown
+  *ngIf="item.type === 'dropdown'"
+  [(ngModel)]="searchInput"
+  [searchResults]="searchResults"
+  [placeholder]="item.placeholder"
+  (searchKeyWord)="onSearch($event)"
+  (showDefaultList)="onShowDefaultList($event)"
+></app-custom-searchable-dropdown>
+<app-custom-searchable-text
+  *ngIf="item.type === 'text'"
+  [(ngModel)]="searchInput"
+  [placeholder]="item.placeholder"
+  (searchKeyWord)="onSearch($event)"
+></app-custom-searchable-text>

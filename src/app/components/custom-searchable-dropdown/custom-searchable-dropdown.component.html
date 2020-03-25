@@ -1,0 +1,24 @@
+<div
+  class="search-input-container"
+  (click)="onShowDefaultList()"
+  (clickOutside)="onClickOutside($event)"
+>
+  <input
+    type="text"
+    pInputText
+    [placeholder]="placeholder"
+    [(ngModel)]="searchInput"
+    (ngModelChange)="onInputChange($event)"
+  />
+  <i class="pi pi-angle-down" *ngIf="!searchInput"></i>
+  <i class="pi pi-times" (click)="clearInput($event)" *ngIf="searchInput"></i>
+
+  <ul class="search-list" *ngIf="isShowDropdown">
+    <li
+      *ngFor="let result of searchResults"
+      (click)="selectItem(result.label, $event)"
+    >
+      {{ result.label }}
+    </li>
+  </ul>
+</div>

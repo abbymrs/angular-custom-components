@@ -1,0 +1,15 @@
+<div class="search-input-container">
+  <input
+    type="text"
+    pInputText
+    [placeholder]="placeholder"
+    [(ngModel)]="searchInput"
+    (ngModelChange)="onInputChange($event)"
+  />
+  <i
+    class="pi pi-search"
+    (click)="onInputChange(searchInput)"
+    *ngIf="!searchInput"
+  ></i>
+  <i class="pi pi-times" (click)="clearInput()" *ngIf="searchInput"></i>
+</div>
